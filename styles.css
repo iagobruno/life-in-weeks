@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.table-container {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.table-container:before {
+    content: 'Semanas do ano →';
+    white-space: nowrap;
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 10px;
+}
+
+.table-container:after {
+    content: '← Idade';
+    white-space: nowrap;
+    position: absolute;
+    top: 0px;
+    right: calc(100% + 22px);
+    transform: rotate(-90deg);
+    transform-origin: right center;
+}
+
+header {
+    padding: 1px 10px 2px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.description {
+    opacity: .6;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tr {
+    position: relative;
+}
+
+td {
+    border: 2px solid #e0e0e0;
+    text-align: center;
+    width: calc(100% / var(--cols, 52));
+    padding-top: calc(100% / 100);
+    position: relative;
+}
+
+th {
+    border: 1px solid #ddd;
+    padding: 6px;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 6px;
+    }
+    td {
+        border: 1px solid #e0e0e0;
+    }
+}
+
+.progress-container {
+    margin: 20px 0;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 18px;
+    background: limegreen;
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.stats-container {
+    padding: 0 4px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 3px 0;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: #333;
+}
+
+#nextBirthday {
+    font-weight: normal;
+    font-size: 0.86em;
+    opacity: .7;
+}
+
+.year-marker:before {
+    content: attr(age);
+    font-size: 13px;
+    white-space: nowrap;
+    position: absolute;
+    top: -2px;
+    right: calc(100% + 6px);
+}
